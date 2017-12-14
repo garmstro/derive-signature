@@ -1,0 +1,26 @@
+<html>
+  <head>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+  </head>
+  <body>
+    <h1>Upload File to Rekognition</h1>
+    <form action="http://S3WEBSITEUPLOADBUCKET.s3.amazonaws.com/" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="key" value="images/${filename}" />
+      <input type="hidden" name="acl" value="private" />
+      <input type="hidden" name="success_action_redirect" value="http://S3WEBSITEBUCKET.s3.amazonaws.com/successful_upload.html" />
+      <input type="hidden" name="Content-Type" value="image/jpeg" />
+      <input type="hidden" name="X-Amz-Credential" value="ACCESS KEY ID GOES HERE/20171211/us-east-1/s3/aws4_request" />
+      <input type="hidden" name="X-Amz-Algorithm" value="AWS4-HMAC-SHA256" />
+      <input type="hidden" name="X-Amz-Date" value="20171211T000000Z" />
+      <input type="hidden" name="Policy" value="BASE64 ENCODED POLICY" />
+      <input type="hidden" name="X-Amz-Signature" value="POLICY SIGNATURE" />
+      <h2>File:</h2> 
+      <input type="file"   name="file" /> <br />
+      <!-- The elements after this will be ignored -->
+      <input type="submit" name="submit" value="Upload to Amazon S3" />
+    </form>
+  
+  </body>
+</html>
